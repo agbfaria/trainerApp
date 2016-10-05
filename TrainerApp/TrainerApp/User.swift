@@ -7,3 +7,23 @@
 //
 
 import Foundation
+
+class User {
+    
+    var name = String()
+    
+    var email = String()
+    
+    var password = String()
+    
+    var dateOfBirth = NSDate()
+    
+    var document = String()
+    
+    var profile = Int8()
+    
+    var active = true
+    
+    var evaluations = [Evaluation]()
+    
+}

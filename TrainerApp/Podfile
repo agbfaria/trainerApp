@@ -1,0 +1,21 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '9.0'
+
+target 'TrainerApp' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for TrainerApp
+  pod 'Firebase'
+
+  target 'TrainerAppTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'TrainerAppUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
