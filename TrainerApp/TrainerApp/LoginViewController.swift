@@ -64,11 +64,15 @@ class ViewController: UIViewController {
             }
             
             if currentUser.email == inputEmail.text {
-                if currentUser.profile == 0 || currentUser.profile == 1 {
-                    self.performSegueWithIdentifier("showUsersListSegue", sender: self)
+                if currentUser.tempPassword {
+                    self.performSegueWithIdentifier("setNewPasswordSegue", sender: self)
                 } else {
-                    selectedUser = currentUser
-                    self.performSegueWithIdentifier("showEvaluationListFromLoginSegue", sender: self)
+                    if currentUser.profile == 0 || currentUser.profile == 1 {
+                        self.performSegueWithIdentifier("showUsersListSegue", sender: self)
+                    } else {
+                        selectedUser = currentUser
+                        self.performSegueWithIdentifier("showEvaluationListFromLoginSegue", sender: self)
+                    }
                 }
             } else {
                 utils.alert(self, title:"Erro", message: "E-mail e/ou senha não identificado(s)", finishButton: "OK", dismiss:false)
@@ -88,9 +92,9 @@ class ViewController: UIViewController {
         
         var user: User = User()
         user.name = "Aggy"
-        user.email = "agbfaria@gmail.com"
+        user.email = "aggy"
+        user.password = "aggy"
         user.profile = 0
-        user.password = "123"
         user.document = "123.456.789-11"
         
         listUsers.append(user)
@@ -120,8 +124,9 @@ class ViewController: UIViewController {
         user = User()
         user.name = "paulinha"
         user.email = "paulinha"
-        user.password = "p123"
+        user.password = "paulinha"
         user.profile = 2
+        user.tempPassword = true
         user.dateOfBirth = dateUtils.getDateFromString("1990", month: "03", day: "29")
             user.document = "123.456.789-11"
         
@@ -164,7 +169,7 @@ class ViewController: UIViewController {
         user = User()
         user.name = "guilherme"
         user.email = "gui"
-        user.password = "g123"
+        user.password = "gui"
         user.profile = 2
         user.dateOfBirth = dateUtils.getDateFromString("1984", month: "11", day: "19")
         user.document = "123.456.789-11"
@@ -210,8 +215,8 @@ class ViewController: UIViewController {
         
         user = User()
         user.name = "augusto"
-        user.email = "agbfariaa@gmail.com"
-        user.password = "p123"
+        user.email = "augusto"
+        user.password = "augusto"
         user.profile = 2
         user.dateOfBirth = dateUtils.getDateFromString("1988", month: "07", day: "12")
         user.document = "123.456.789-11"

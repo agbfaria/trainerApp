@@ -116,6 +116,7 @@ class AddUserViewController: UIViewController {
     
     func resetPassword(){
         selectedUser.password = passwordDefault
+        selectedUser.tempPassword = true
         utils.alert(self, title: "Sucesso!", message: "Senha resetada com sucesso!", finishButton: "Ok", dismiss:true)
     }
 
