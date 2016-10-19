@@ -29,7 +29,7 @@ public class TDTOpenner {
         let comma = NSCharacterSet(charactersInString: "\t")
         let csvString: String?
         do {
-            csvString = try String(contentsOfFile: url, encoding: NSNonLossyASCIIStringEncoding)//NSUTF8StringEncoding, NSASCIIStringEncoding, NSUTF16 NSUTF32
+            csvString = try String(contentsOfFile: url, encoding: NSASCIIStringEncoding)
         } catch _ {
             csvString = nil
         };

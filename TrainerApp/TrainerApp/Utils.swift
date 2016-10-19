@@ -159,7 +159,7 @@ class Utils {
             e.epicHumeral = Double(validReturn(rows[29][1]!))!
             e.epicFemoral = Double(validReturn(rows[30][1]!))!
             
-            var obs: String = "\(rows[35][2]!)\n"
+            var obs: String = "\(String(rows[35][2]!.characters.map { $0 == "¼" ? "º" : $0 }) )\n"
             for i in 31  ..< rows.count  {
                 if var row = rows[i][1] where row != "" {
                     if row.characters.first == "\"" {
