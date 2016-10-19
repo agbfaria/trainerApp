@@ -27,13 +27,14 @@ public class TDTOpenner {
     
     public convenience init(contentsOfURL url: String) throws {
         let comma = NSCharacterSet(charactersInString: "\t")
-        let csvString: String?
+        let str: String?
+        
         do {
-            csvString = try String(contentsOfFile: url, encoding: NSASCIIStringEncoding)
+            str = try String(contentsOfFile: url, encoding: NSASCIIStringEncoding)
         } catch _ {
-            csvString = nil
+            str = nil
         };
-        try self.init(content: csvString,delimiter:comma, encoding:NSUTF8StringEncoding)
+        try self.init(content: str,delimiter:comma, encoding:NSASCIIStringEncoding)
     }
     
     
